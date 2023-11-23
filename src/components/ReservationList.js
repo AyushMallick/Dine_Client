@@ -35,7 +35,7 @@ const ReservationList = () => {
       setIsLoading(false);
     };
     fetchData();
-  }, [id, getAccessTokenSilently]);
+  }, [id, getAccessTokenSilently, isLoading]);
 
   if (isLoading) {
     return <p>Loading...</p>;
@@ -57,7 +57,7 @@ const ReservationList = () => {
       </>
     );
   }
-  const deleteBooking=async(id)=>{
+  /*const deleteBooking=async(id)=>{
     // event.preventDefault();
     try {
       
@@ -94,7 +94,43 @@ const ReservationList = () => {
     //   setIsLoading(false);
     //   navigate("/reservations");
     // }
+  };*/
+
+  const deleteBooking = async (id) => {
+    try {
+      const accessToken = await getAccessTokenSilently();
+      setIsLoading(true);
+
+      const body = { id };
+
+      const response = await fetch(
+        `${process.env.REACT_APP_API_URL}/deleteBooking/${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${accessToken}`,
+          },
+          body: JSON.stringify(body),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`Failed to delete booking. Status: ${response.status}`);
+      }
+
+      setIsLoading(false);
+      navigate("/reservations");
+    } catch (error) {
+      setIsLoading(false);
+      setIsError(true);
+      console.error("Error deleting booking:", error);
+    }
   };
+
+  // ... (rest of your code)
+
+
 
   return (
     <>

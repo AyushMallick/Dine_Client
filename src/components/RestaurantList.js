@@ -15,9 +15,7 @@ const RestaurantList = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(
-        `${process.env.REACT_APP_API_URL}/restaurants`
-      );
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/restaurants`);
       const data = await response.json();
       setRestaurants(data);
       setIsLoading(false);
