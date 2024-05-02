@@ -16,10 +16,10 @@ const Footer = () => {
           <li className="thanksCont">
             <p className="thanks">
               Thanks for visiting.
-              <br /> This site was created by: <br/>Divyam Kashyap, Parv Aggarwal, Dhruv Jain, Preet Patel, Ayush Kumar Mallick.
+              <br /> This site was created by: <br/>Divyam Kashyap & Dhruv Jain.
             </p>
             <a
-              href="https://github.com/ParvAggarwal"
+              href="https://github.com/DhruvJain019"
               target="_blank"
               rel="noreferrer noopener"
             >
