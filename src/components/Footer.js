@@ -19,7 +19,7 @@ const Footer = () => {
               <br /> This site was created by: <br/>Dhruv Jain, Ayush Kumar Mallick & Divyam Kashyap.
             </p>
             <a
-              href="https://github.com/DhruvJain019"
+              href="https://github.com/AyushMallick/Dine_Client"
               target="_blank"
               rel="noreferrer noopener"
             >
