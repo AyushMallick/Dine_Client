@@ -16,7 +16,7 @@ const Footer = () => {
           <li className="thanksCont">
             <p className="thanks">
               Thanks for visiting.
-              <br /> This site was created by: <br/>Divyam Kashyap & Dhruv Jain.
+              <br /> This site was created by: <br/>Dhruv Jain, Ayush Kumar Mallick & Divyam Kashyap.
             </p>
             <a
               href="https://github.com/DhruvJain019"
